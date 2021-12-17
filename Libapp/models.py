@@ -34,8 +34,16 @@ class subject(db.Model):
   __tablename__ = "subject"
   subject_id = db.Column(db.Integer, primary_key=True)
   subject_name = db.Column(db.String(50))
+  book_subject = db.relationship('book' , backref = 'book_subject')
   def __repr__(self):
     return f'<subject {self.subject_id} {self.subject_name}>'
+
+
+
+
+book_auth = db.Table('book_author' , 
+    db.Column('isbn_code' ,db.String(10) , db.ForeignKey('book.isbn_code')) ,
+    db.Column('author_id' ,db.Integer , db.ForeignKey('author.author_id'))) 
   
 class book(db.Model):
   __tablename__ = "book"
@@ -43,10 +51,12 @@ class book(db.Model):
   book_title = db.Column(db.String(70))
   book_language = db.Column(db.String(20))
   no_of_copies = db.Column(db.Integer)
+  subject = db.Column(db.Integer , db.ForeignKey('subject.subject_id'))
   is_Available = db.Column(db.String(1))
   publication_year = db.Column(db.Integer)
-  bookItem = db.relationship('book_item' , backref= 'book')
-  book_reserved = db.relationship('book_reserve', backref= 'bookreserv')
+  bookItem = db.relationship('book_item' , backref= 'book' ,cascade="all, delete-orphan")
+  book_reserved = db.relationship('book_reserve', backref= 'bookreserv' , cascade="all, delete-orphan")
+  authors = db.relationship('author', secondary = book_auth ,backref = db.backref('book_author' , lazy = 'dynamic'))
 
 
 
@@ -56,16 +66,12 @@ class book(db.Model):
 
 
 
-book_auth = db.Table('book_auth' , 
-    db.Column('isbn_code' ,db.String(10) , db.ForeignKey('book.isbn_code')) ,
-    db.Column('author_id' ,db.Integer , db.ForeignKey('author.author_id'))) 
-
 
 class author(db.Model): 
     author_id = db.Column(db.Integer , primary_key = True)
     name = db.Column(db.String(30))
     DOB = db.Column(db.DateTime)
-    authors = db.relationship('author', secondary = book_auth ,backref = db.backref('book_author' , lazy = 'dynamic'))
+    
 
 
 
@@ -114,8 +120,20 @@ class book_shelf(db.Model):
 
 
 
-with app.app_context():
+#with app.app_context():
     #db.drop_all()
-    db.create_all()
-    #test = User.query.filter_by(people_id_user=2012612456).first()
-    #print(test.peoplename.First_name)
+   #db.create_all()
+   ##test = author.query.filter_by(name='bader').first()
+
+  ## for books in test.book_author: 
+         ##print(books.isbn_code)
+    
+    #book_items = book_item.query.filter_by().all()
+
+################################################################
+   # db.session.query(book_item).filter(book_item.barcode == '988849434943').update({'status': 'Y'})
+    #db.session.commit() 
+   ################# 
+    #for books in test.author.book_author :
+    #    print(books.isbn_code)
+   # print(test2.book_author.isbn_code
