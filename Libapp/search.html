@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" >
+    <link rel="stylesheet" type= "text/css" href="static/style.css" >
+</head>
+<body>
+<section class="hero is-fullheight" style="background-color:#C4FCEF;">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="{{ url_for('main.books') }}" class="navbar-item">
+                            Books
+                        </a>
+                        <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                            Profile
+                        </a>
+                        <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <form method="POST" action="/search">
+        <input class="control" id="search-text-1" name="searchbar" placeholder="Search databases, journals, e-books, and books" role="textbox" type="text" style="
+        width: 50%;
+        height: 50px;
+        top: 7%;
+        position: absolute;
+        right: 50%;
+        left: 20%;
+    ">
+<select class="control" name="search_selction" onchange="" size="1" style="width: 10%;height: 50px;position: absolute;top: 7%;left: 70%;">
+    <option selected="selected" value="ti">Title</option>
+    <option value="author">Author</option>
+    <option value="sub">Subject</option> 
+    <option value="pub">publication date</option></select>
+  
+  
+  <button class="button is-block is-info is-large is-fullwidth" id="shusearch-btn" role="button" type="submit" style="
+    width: 60%;
+    height: 50px;
+    position: absolute;
+    top: 13%;
+    left: 20%;
+">Search</button>
+
+
+
+<h2 class="title" style="
+    position: absolute;
+    top: 25%;
+    left: 20%;
+">
+    
+{% autoescape false %}
+    {{result}}
+{% endautoescape %}
+
+</h2>
+</form>
+</div>
+</div>
+</section>
+</body>
+</html>
+
+        
