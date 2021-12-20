@@ -1,0 +1,101 @@
+.profile-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.profile-text {
+  top: 466px;
+  left: 247px;
+  width: 640px;
+  height: 142px;
+  position: absolute;
+  font-weight: 900;
+  letter-spacing: 10px;
+}
+.profile-header {
+  width: 100%;
+  display: flex;
+  position: relative;
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  padding-top: var(--dl-space-space-twounits);
+  padding-left: var(--dl-space-space-threeunits);
+  padding-right: var(--dl-space-space-threeunits);
+  padding-bottom: var(--dl-space-space-twounits);
+  justify-content: space-between;
+  background-color: #007d41;
+}
+.profile-image {
+  width: 90px;
+  height: 73px;
+}
+.profile-text1 {
+  top: 61px;
+  left: 127px;
+  color: #ffffff;
+  position: absolute;
+  font-size: 30px;
+  font-family: Tahoma;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+.profile-btn-group {
+  border: 2px dashed rgba(120, 120, 120, 0.4);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.profile-navlink {
+  top: 63px;
+  color: #ffffff;
+  right: 149px;
+  position: absolute;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.profile-navlink1 {
+  top: 62px;
+  left: 741px;
+  color: #ffffff;
+  position: absolute;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.profile-navlink2 {
+  top: 62px;
+  left: 856px;
+  color: #ffffff;
+  position: absolute;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.profile-navlink3 {
+  top: 62px;
+  color: #ffffff;
+  right: 38px;
+  position: absolute;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+@media(max-width: 767px) {
+  .profile-header {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .profile-btn-group {
+    display: none;
+  }
+}
+@media(max-width: 479px) {
+  .profile-header {
+    padding: var(--dl-space-space-unit);
+  }
+}

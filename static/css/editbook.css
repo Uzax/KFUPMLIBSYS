@@ -1,0 +1,203 @@
+.editbook-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.editbook-header {
+  width: 100%;
+  display: flex;
+  position: relative;
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  padding-top: var(--dl-space-space-twounits);
+  padding-left: var(--dl-space-space-threeunits);
+  padding-right: var(--dl-space-space-threeunits);
+  padding-bottom: var(--dl-space-space-twounits);
+  justify-content: space-between;
+  background-color: #007d41;
+}
+.editbook-image {
+  width: 90px;
+  height: 73px;
+}
+.editbook-text {
+  top: 61px;
+  left: 127px;
+  color: #ffffff;
+  position: absolute;
+  font-size: 30px;
+  font-family: Tahoma;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+.editbook-navlink {
+  top: 63px;
+  color: #ffffff;
+  right: 169px;
+  position: absolute;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.editbook-navlink01 {
+  top: 62px;
+  color: #ffffff;
+  right: 38px;
+  position: absolute;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.editbook-form {
+  left: 120px;
+  width: 697px;
+  bottom: -123px;
+  height: 788px;
+  position: absolute;
+}
+.editbook-button {
+  top: 511px;
+  left: 306px;
+  position: absolute;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.editbook-text03 {
+  text-transform: uppercase;
+}
+.editbook-textinput {
+  top: 130px;
+  left: 392px;
+  position: absolute;
+}
+.editbook-textinput1 {
+  top: 244px;
+  left: 386px;
+  position: absolute;
+}
+.editbook-textinput2 {
+  top: 335px;
+  left: 387px;
+  position: absolute;
+}
+.editbook-textinput3 {
+  top: 241px;
+  left: 55px;
+  position: absolute;
+}
+.editbook-textinput4 {
+  top: 435px;
+  left: 222px;
+  position: absolute;
+}
+.editbook-textinput5 {
+  top: 335px;
+  left: 55px;
+  position: absolute;
+}
+.editbook-textinput6 {
+  top: 130px;
+  left: 52px;
+  position: absolute;
+}
+.editbook-text04 {
+  top: 223px;
+  left: 398px;
+  position: absolute;
+  text-decoration: none;
+}
+.editbook-text05 {
+  top: 313px;
+  left: 396px;
+  position: absolute;
+  text-decoration: none;
+}
+.editbook-text06 {
+  top: 411px;
+  left: 223px;
+  position: absolute;
+  text-decoration: none;
+}
+.editbook-text07 {
+  top: 311px;
+  left: 62px;
+  position: absolute;
+  text-decoration: none;
+}
+.editbook-text08 {
+  top: 220px;
+  left: 59px;
+  position: absolute;
+  text-decoration: none;
+}
+.editbook-text09 {
+  top: 108px;
+  left: 402px;
+  position: absolute;
+  text-decoration: none;
+}
+.editbook-text10 {
+  top: 106px;
+  left: 54px;
+  position: absolute;
+  text-decoration: none;
+}
+.editbook-text12 {
+  top: 574px;
+  left: 299px;
+  width: 195px;
+  height: 57px;
+  position: absolute;
+}
+.editbook-text14 {
+  text-transform: uppercase;
+}
+.editbook-form1 {
+  top: 143px;
+  left: 268px;
+  width: 357px;
+  height: 137px;
+  position: absolute;
+}
+.editbook-textinput7 {
+  top: 46px;
+  left: 48px;
+  position: absolute;
+}
+.editbook-text15 {
+  top: 18px;
+  left: 53px;
+  position: absolute;
+  text-decoration: none;
+}
+.editbook-button1 {
+  top: 96px;
+  left: 133px;
+  position: absolute;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.editbook-text19 {
+  text-transform: uppercase;
+}
+.editbook-text20 {
+  right: 25px;
+  width: 295px;
+  bottom: -79px;
+  height: 57px;
+  position: absolute;
+}
+@media(max-width: 767px) {
+  .editbook-header {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+}
+@media(max-width: 479px) {
+  .editbook-header {
+    padding: var(--dl-space-space-unit);
+  }
+}
