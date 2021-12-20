@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>New Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}
+    </style>
+    <style>
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    />
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/style.css')}}" />
+  </head>
+  <body>
+    <div>
+      <link href="{{url_for('static' , filename='css/deletebook.css')}}" rel="stylesheet" />
+      <title>deletebook - New Project</title>
+      <meta property="og:title" content="deletebook - New Project" />
+      <div class="deletebook-container">
+        <header class="deletebook-header">
+          <img
+            alt="logo"
+            src="{{url_for('static' , filename='kfupm.jpg')}}"
+            class="deletebook-image"
+          />
+          <span class="deletebook-text">KFUPM LIBRARY SYSTEM</span>
+          <a href="{{ url_for('main.profile') }}" class="deletebook-navlink">home</a>
+          <a href="{{ url_for('auth.logout') }}" class="deletebook-navlink1">LOgout</a>
+        </header>
+        <form action="/deleteitem" method="POST" class="deletebook-form"
+        >
+          <input
+            type="text"
+            id="bar"
+            name="bar"
+            placeholder="BARCODE"
+            class="deletebook-textinput input"
+          />
+         
+            <label class="deletebook-text1"><span>Barcode :</span></label>
+        
+          <button
+            id="submit_btn"
+            name="submit_btn"
+            type="submit"
+            value="SUBMIT"
+            class="deletebook-button button"
+          >
+            <span>
+              <span>Submit</span>
+              <span class="deletebook-text5"></span>
+            </span>
+          </button>
+          <!-- <h1 class="deletebook-text6"><span>DONE</span><span class="deletebook-text8"></span></h1> -->
+          {% autoescape false %}
+          {{message}}
+          {% endautoescape %}
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>New Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}
+    </style>
+    <style>
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    />
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/style.css')}}" />
+  </head>
+  <body>
+    <div>
+        <link href="{{url_for('static' , filename='css/books.css')}}" rel="stylesheet" />
+        <div class="books-container">
+          <header class="books-header">
+            <img
+              alt="logo"
+              src="{{url_for('static' , filename='kfupm.jpg')}}"
+              class="books-image"
+            />
+            <span class="books-text">KFUPM LIBRARY SYSTEM</span>
+            <div class="books-btn-group"></div>
+            <a href="{{ url_for('main.profile') }}" class="books-navlink">PRofile</a>
+            <a href="{{ url_for('main.search') }}" class="books-navlink1">search</a>
+            <a href="{{ url_for('main.books') }}" class="books-navlink2">Books</a>
+            <a href="{{ url_for('auth.logout') }}" class="books-navlink3">LOgout</a>
+          </header>
+          <div class="books-container1">
+            <h1 class="books-text01">RESERVED BOOKS :</h1>
+            
+          </div>
+          <form class="books-form" method="POST" action="/books">
+
+            <div style="height: 300px;top: 117%;position: absolute;overflow:auto;background-color: lightgray;color: black;scrollbar-base-color:gold;font-family:sans-serif;padding: 10px;border: double;width: 900px;font-size: 30px;"> 
+              {% autoescape false %}
+              {{reserv}}
+              {% endautoescape %}
+             </div>
+            <!-- <button class="books-button button">RETURB 2</button>
+            <button class="books-button1 button">RENEW 1</button>
+            <button class="books-button2 button">RENEW 2</button>
+            <button class="books-button3 button">RETURB 1</button>
+            <span class="books-text26">
+              <span>TEXT BOOK 2</span>
+              <br />
+              <span>TITLE BOOK 2</span>
+              <br />
+              <span>ISSUED BOOK 2</span>
+            </span>
+            <span class="books-text32">
+              <span>TEXT BOOK 1</span>
+              <br />
+              <span>TITLE BOOK 1</span>
+              <br />
+              <span>ISSUED BOOK!</span>
+            </span> -->
+            <div style="height: 300px;top: 19%;position: absolute;overflow:auto;background-color: lightgray;color: black;scrollbar-base-color:gold;font-family:sans-serif;padding: 10px;border: double;width: 900px;font-size: 30px;"> 
+           
+            {% autoescape false %}
+            {{result}}
+            {% endautoescape %}
+          </div>
+            
+            <h1 class="books-text38">BORROWED BOOKS :</h1>
+          </form>
+        </div>
+      </div>
+      
+      
+  </body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+<body>
+<section class="hero is-fullheight" style="background-color:#C4FCEF;">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="{{ url_for('main.index') }}" class="navbar-item">
+                            Home
+                        </a>
+                        <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                            Login
+                        </a>
+                        <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Login</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="notification is-danger">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="/login">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="username" name="username" placeholder="Your Username" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="password" name="password" placeholder="Your Password">
+                </div>
+            </div>
+            <div class="field">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    Remember me
+                </label>
+            </div>
+            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+<body>
+<section class="hero is-fullheight" style="background-color:#C4FCEF;">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="{{ url_for('main.search') }}" class="navbar-item">
+                            Search Books
+                        </a>
+                        <a href="{{ url_for('main.books') }}" class="navbar-item">
+                            Books
+                        </a>
+                        <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                            Profile
+                        </a>
+                        <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                            Logout
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+<h1 class="title">
+    Welcome, {{name}}!
+    
+    You are , {{type}} :)
+</h1>
+</div>
+</div>
+</section>
+</body>
+</html>
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+<body>
+<section class="hero is-fullheight" style="background-color:#C4FCEF;">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="{{ url_for('main.addbooks') }}" class="navbar-item">
+                            ADD BOOKS
+                        </a>
+                        <a href="{{ url_for('main.deletebook') }}" class="navbar-item">
+                            Delete Book
+                        </a>
+                        <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                            Profile
+                        </a>
+                        <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                            Logout
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+<h1 class="title">
+    Welcome, {{name}}!
+    
+    You are , {{type}} :)
+</h1>
+</div>
+</div>
+</section>
+</body>
+</html>
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+<body>
+<section class="hero is-fullheight" style="background-color:#C4FCEF;">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="{{ url_for('main.addbooks') }}" class="navbar-item">
+                            ADD BOOKS
+                        </a>
+                        <a href="{{ url_for('main.deletebook') }}" class="navbar-item">
+                            Delete Book
+                        </a>
+                        <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                            Profile
+                        </a>
+                        <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                            Logout
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+
+            <form method="POST" action="/addbooks">
+                <label for="isbn" style="
+    left: 50%;
+    position: absolute;
+    top: -350%;
+    font-size: 17px;
+    font-family: monospace;
+">ISBN CODE : </label><br>
+                <input type="text" id="isbn" name="isbn" style="
+    position: absolute;
+    top: -320%;
+    left: 50%;
+"><br>
+                <label for="title" style="
+    left: 50%;
+    position: absolute;
+    top: -290%;
+    font-size: 17px;
+    font-family: monospace;
+">BOOK Title :</label><br>
+                <input type="text" id="title" name="title" style="
+    position: absolute;
+    left: 50%;
+    top: -260%;
+">
+                <label for="lang" style="
+    position: absolute;
+    top: -230%;
+    left: 50%;
+    font-size: 17px;
+    font-family: monospace;
+">Language :</label><label for="sub" style="
+    position: absolute;
+    top: -160%;
+    left: 50%;
+    font-size: 17px;
+    font-family: monospace;
+">Subject:</label><label for="sub" style="
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    font-size: 17px;
+    font-family: monospace;
+">YEAR : </label><label for="sub" style="
+    position: absolute;
+    top: -160%;
+    left: 70%;
+    font-size: 17px;
+    font-family: monospace;
+">NEW Subject:</label><label for="AVI" style="
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    font-size: 17px;
+    font-family: monospace;
+">is Available?</label><label for="AVI" style="
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    font-size: 17px;
+    font-family: monospace;
+">NO Copy:</label><br>
+                <input type="text" id="lang" name="lang" style="
+    position: absolute;
+    top: -200%;
+">
+    <input type="text" id="year" name="year" style="
+    position: absolute;
+    top: -10%;
+"><input type="text" id="copy_no" name="copy_no" style="
+    position: absolute;
+    top: 40%;
+"><input type="text" id="sub" name="sub" style="
+    position: absolute;
+    top: -130%;
+    left: 70%;
+"><select class="control" name="subject_selection" onchange="" size="1" style="width: 150px;height: 20px;position: absolute;top: -130%;left: 50%;">
+    
+    <option selected="selected" value="none">NONE</option>
+    <option value="CS">Computer Science</option>
+    <option value="DB">Database</option> 
+    <option value="DS">Data Science</option></select>
+  
+              
+            <select class="control" name="av_selection" onchange="" size="1" style="width: 150px;height: 20px;position: absolute;top: -70%;left: 50%;">
+    <option selected="selected" value="Y">Yes</option>
+    <option value="N">NO</option></select>
+    <input type="submit" name="submit_btn" value="SUBMIT" style="width: 13%;height: 50px;position: absolute;top: 80%;">
+
+
+{% autoescape false %}
+{{message}}
+{% endautoescape %}
+
+</form>
+
+        
+    </div>
+    </div>
+    </section>
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+<body>
+<section class="hero is-fullheight" style="background-color:#C4FCEF;">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="{{ url_for('main.search') }}" class="navbar-item">
+                            Search
+                        </a>
+                        <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                            Profile
+                        </a>
+                        <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                            Logout
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            
+            <form method="POST" action="/books">
+
+                   
+{% autoescape false %}
+{{result}}
+{% endautoescape %}
+
+            </form>
+
+        </div>
+    </div>
+</section>
+</body>
+</html>
+
+
+
+
+
+
+
+<span class="books-text02"><span>TEXT BOOK 2</span><br><span>TITLE BOOK 2</span><br><span>ISSUED BOOK 2</span></span>
+
+
+
+
+ <form class="editbook-form" style="left: 43%;" ><button  id="submit_edit"  name="submit_edit"  type="submit"  class="editbook-button button">  <span>    <span>Submit</span>    <span class="editbook-text03"></span>  </span></button><input  type="text"  id="title"  name="title"  placeholder="Title"  class="editbook-textinput input"/><input  type="text"  id="sub"  name="sub"  placeholder="Subject"  class="editbook-textinput1 input"/><input  type="text"  id="nocopy"  name="nocopy"  placeholder="COPY"  class="editbook-textinput2 input"/><input  type="text"  id="lang"  name="lang"  placeholder="Language"  class="editbook-textinput3 input"/>  <input    type="text"    id="avl"    name="avl"    placeholder="Y OR N"    class="editbook-textinput4 input"  />  <input    type="text"    id="year"    name="year"    placeholder="Year"    class="editbook-textinput5 input"  />  <input    type="text"    id="isbn"    name="isbn"    placeholder="ISBN"    class="editbook-textinput6 input"  />      <label class="editbook-text04">Subject :</label>         <label class="editbook-text05">No Copy :</label>         <label class="editbook-text06">is Available ? (Y/N)</label>         <label class="editbook-text07">Year :</label>         <label class="editbook-text08">Language :</label>         <label class="editbook-text09">Book Title :</label>         <label class="editbook-text10"><span>ISBN Code :</span></label>     <h1 class="editbook-text12">    <span>DONE</span>    <span class="editbook-text14"></span>  </h1></form>
+
+
+
+
+
+ ' <form class="editbook-form"   action="/editbook" method="POST" style="left: 43%; top: 11%;" > 
+ <input id="submit_edit" name="submit_edit" type="submit" value = "SUBMIT" class="editbook-button button"> 
+ <input  type="text"  id="title"   name="title" value="'+search_book.book_title+'" placeholder="Title" class="editbook-textinput input"/>
+ <input  type="text"  id="sub"  name="sub" value="'+subj.subject_name+'"  placeholder="Subject"  class="editbook-textinput1 input"/>
+ <input  type="text"  id="nocopy"  name="nocopy" value="'+str(search_book.no_of_copies)+'"  placeholder="COPY"  class="editbook-textinput2 input"/>
+ <input  type="text"  id="lang"  name="lang" value="'+search_book.book_language+'" placeholder="Language"  class="editbook-textinput3 input"/>  
+ <input    type="text"    id="avl"    name="avl"    value="'+search_book.is_Available+'" placeholder="Y OR N"    class="editbook-textinput4 input"  />  
+ <input    type="text"    id="year"    name="year"   placeholder="Year"  value="'+str(search_book.publication_year)+'"  class="editbook-textinput5 input"  />  
+ <input    type="text"    id="isbn"    name="isbn"  value="'+search_book.isbn_code+'"  placeholder="ISBN"    class="editbook-textinput6 input"  /> 
+ <input    type="hidden"    id="isbn1"    name="isbn1"  value="'+search_book.isbn_code+'"  placeholder="ISBN"    class="editbook-textinput6 input"  />      
+ <label class="editbook-text04">Subject :</label>         <label class="editbook-text05">No Copy :</label>         <label class="editbook-text06">is Available ? (Y/N)</label>         <label class="editbook-text07">Year :</label>         <label class="editbook-text08">Language :</label> 
+ 
+ 
+ 
+         <label class="editbook-text09">Book Title :</label>         <label class="editbook-text10"><span>ISBN Code :</span></label>     <h1 class="editbook-text12">    <span>DONE</span>    <span class="editbook-text14"></span>  </h1></form>'
+
+
+
+
+
+
+<form class="editbook-form" action="/edititem" method="POST" style="left: 43%; top: 11%;"> <input id="submit_edit" name="submit_edit" type="submit" value="SUBMIT" class="editbook-button button"> <input type="text" id="bar" name="bar" value="Java" placeholder="Barcode" class="editbook-textinput input"><input type="text" id="avl" name="avl" value="Computer Science" placeholder="Subject" class="editbook-textinput1 input"><input type="text" id="copy_no" name="copy_no" value="English " placeholder="Language" class="editbook-textinput3 input">      <input type="text" id="isbn" name="isbn" value="82" placeholder="ISBN" class="editbook-textinput6 input"> <input type="hidden" id="bar1" name="bar1" value="82" placeholder="ISBN" class="editbook-textinput6 input">      <label class="editbook-text04">Status :</label>                                    <label class="editbook-text08">Copy_No :</label>         <label class="editbook-text09">Barcode :</label>         <label class="editbook-text10"><span>ISBN Code :</span></label>     <h1 class="editbook-text12">    <span>DONE</span>    <span class="editbook-text14"></span>  </h1></form>

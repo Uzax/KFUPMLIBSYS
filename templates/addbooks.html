@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>New Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}
+    </style>
+    <style>
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    />
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/style.css')}}" />
+  </head>
+  <body>
+    <div>
+      <link href="{{url_for('static' , filename='css/addbook.css')}}" rel="stylesheet" />
+      <title>addbook - New Project</title>
+      <meta property="og:title" content="addbook - New Project" />
+      <div class="addbook-container">
+        <header class="addbook-header">
+          <img
+            alt="logo"
+            src="{{url_for('static' , filename='kfupm.jpg')}}"
+            class="addbook-image"
+          />
+          <span class="addbook-text">KFUPM LIBRARY SYSTEM</span>
+          <a href="{{ url_for('main.profile') }}" class="addbook-navlink">home</a>
+          <a href="{{ url_for('auth.logout') }}" class="addbook-navlink1">LOgout</a>
+        </header>
+        <form class="addbook-form" method="POST" action="/addbooks">
+            <button type="submit" name="submit_add" id="submit_add" class="addbook-button button" value="SUBMIT">
+              <span>
+                <span>Submit</span>
+                <span class="addbook-text03"></span>
+              </span>
+            </button>
+            <input type="text" placeholder="Title" name="title" id="title" class="addbook-textinput input">
+            <input type="text" placeholder="Subject" id="sub" name="sub" class="addbook-textinput1 input" style="
+      position: absolute;
+      left: 65%;
+  ">
+            <input type="text" placeholder="COPY" id="nocopy" name="nocopy" class="addbook-textinput2 input">
+            <input type="text" placeholder="Language" name="lang" id="lang" class="addbook-textinput3 input">
+            
+            <input type="text" placeholder="Year" id="year" name="year" class="addbook-textinput5 input">
+            <input type="text" placeholder="ISBN" name="isbn" id="isbn" class="addbook-textinput6 input">
+             
+              <label class="addbook-text04">Subject :</label>
+             
+             
+              <label class="addbook-text04" style="
+      position: absolute;
+      left: 65%;
+  ">NEW Subject :</label><label class="addbook-text05">No Copy :</label>
+             
+             
+              <label class="addbook-text06">is Available ? (Y/N)</label>
+             
+             
+              <label class="addbook-text07">Year :</label>
+             
+             
+              <label class="addbook-text08">Language :</label>
+             
+             
+              <label class="addbook-text09">Book Title :</label>
+             
+             
+              <label class="addbook-text10"><span>ISBN Code :</span></label>
+             
+            <h1 class="addbook-text12">
+              <span>{{message}}</span>
+              <span class="addbook-text14"></span>
+            </h1> <select class="control" name="subject_selection" onchange="" size="1" style="width: 150px;height: 20px;top: 30%;left: 41%;position: absolute;">
+      
+      <option selected="selected" value="none">NONE</option>
+                      
+{% autoescape false %}
+{{op}}
+{% endautoescape %}</select>
+          <select class="control" name="avl" onchange="" size="1" style="width: 150px;height: 20px;top: 53%;left: 23%;position: absolute;">
+      
+      <option selected="selected" value="Y">YES</option>
+      <option value="N">No</option>
+ </select></form>
+      </div>
+    </div>
+  </body>
+</html>
